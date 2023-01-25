@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{  
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.container{
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 85px auto 0;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container .input-field{
+    position: relative;
+    height: 64px;
+    width: 100%;
+}
+
+.input-field textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    padding: 18px 45px 18px 15px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+.input-field textarea:focus{
+    border-color: #4a89b3;
+}
+
+textarea::-webkit-scrollbar{
+    display: none;
+}
+
+.input-field .note-icon{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 24px;
+    color: #707070;
+}
+
+.input-field textarea:focus  ~ .note-icon{
+    color: #4a89b3;
+}
+
+.container .todoLists{
+    margin-top: 20px;
+}
+
+.todoLists .list{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    background-color: #f2f2f2;
+    padding: 20px 15px;
+    border-radius: 8px;
+    margin: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.todoLists .list  input{
+    height: 16px;
+    min-width: 16px;
+    accent-color: #4a89b3;
+    pointer-events: none;
+}
+
+.todoLists .list .task{
+    margin: 0 30px 0 15px;
+    word-break: break-all;
+}
+
+.list  input:checked ~ .taks{
+    text-align: line-throuhg;
+}
+
+.todoLists .list i{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #707070;
+    padding: 5px;
+    opacity: 0.6;
+    display: none;
+}
+
+.todoLists .list:hover i{
+    display: inline-flex;
+}
+
+.todoLists .list i:hover{
+    opacity: 1;
+}
+
+
+
+/*/ 
+
+const inputField = document.querySelector(".input-field textarea"),
+todoLists = document.querySelector(".todoLists"),
+pendingNum = document.querySelector(".pending-num"),
+clearButton = document.querySelector(".clear-button");
+
+inputField.addEventListener("keyup", (e) => {
+  let inputVal = inputField.value.trim();
+
+  if (e.key === "Enter" && inputVal.length > 0) {
+    let liTag = ` <li class="List">
+    <input type="checkbox" />
+    <span class="task">${inputval}</span>
+    <i class="uil uil-trash"></i>
+    </li>`;
+
+    todoLists.insertAdjacentHTML("beforeend", liTag);
+  }
+})
+
+
+
+
+<div class="container">
+
+            <ul class="todoLists">
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">Atualização de firmware</span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">TESTE CHICOTE FRONTAL</span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">TESTE CHICOTE BATERIA</span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">CONEXÃO WI-FI</span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">TESTE TOUCHSCREEN</span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">TESTE CAMERA IV</span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">TESTE DE CAMERA COLORIDA</span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">SPEKEAR</span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">CADASTRO DE USUSARIO </span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">TESTE DE ACIONAMENTO MEC.</span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">TESTE DE CHAVE </span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">TESTE CARTÃO DE ACESO </span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">TESTE SENHA PIN </span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">TESTE RECONHECIMENTO FACIAL </span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">TESTE FONTE 9V 1A</span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">TESTE BATERIA </span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">EXCLUSÃO DE USUARIO</span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">RESET DE FABRICA </span>
+                </li>
+                <li class="list">
+                    <input type="checkbox">
+                    <span class="task">INVERSÃO MAÇANETA</span>
+                </li>
+            </ul>
